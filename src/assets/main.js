@@ -1,10 +1,10 @@
 const barrita = document.querySelector('.progressbar-barra');
-let width = 0;
+let progreso = 0;
 const interval = setInterval(() => {
-  if (width >= 100) {
-    clearInterval(interval);
-  } else {
-    width++;
-    barrita.style.width = `${width}%`;
-  }
+    if (progreso >= 100) {
+        clearInterval(interval);
+    } else {
+        progreso++;
+        barrita.style.width = `${progreso}%`;
+    }
 }, 1000);
