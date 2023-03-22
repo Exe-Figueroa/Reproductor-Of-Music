@@ -6,7 +6,7 @@
 html{
     font-size: 62.5%;
 }
-body{
+.body{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,21 +15,100 @@ body{
 .reproductor-container{
     width: 320px;
     height: 586px;
-    background-color: #175232;
+    background-color: #e9d5bc;
+    border-radius: 10px;
 }
 header{
     width: 100%;
     position: relative;
     height: 55px;
-    background: gray;
 }
 header .title-header{
     position: absolute;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: white;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Roboto', sans-serif;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, 0);
-    
+    top: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.songs-container{
+    width: 100%;
+    height: 314px;
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.song-icon-container{
+    width: fit-content;
+    height: 258px;
+    display: flex;
+    align-items: center;
+}
+.song-icon-container .song-icon{
+    width: 218px;
+    height: 218px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25),
+                -10px -10px 15px rgba(255, 255, 255, 0.5);
+}
+.pad{
+    margin: 0 26px;
+}
+.progressbar-container{
+    width: 100%;
+    height: 90px;
+    background-color: pink;
+}
+.description-song-container{
+    width: 270px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 44px;
+    padding: 3px;
+}
+.description-song-container .name-song{
+    font-family: 'roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.95);
+}
+.description-song-container .description-song{
+    font-family: 'roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #0c0c22ab;
+}
+
+.progressbar-barra{
+    position: relative;
+    width: 270px;
+    margin: 0 auto;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progressbar-barra::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: translateX(-100%);
+    animation: barra-progress 0.8s 0.3s ease-in-out forwards; 
+}
+@keyframes barra-progress{
+    to{
+        transform: translatex(-50%);
+    }
 }
