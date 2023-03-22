@@ -89,26 +89,29 @@ header .title-header{
     color: #0c0c22ab;
 }
 
-.progressbar-barra{
-    position: relative;
+.barra{
     width: 270px;
     margin: 0 auto;
-    height: 10px;
+    height: 3px;
     background-color: #ccc;
     border-radius: 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-.progressbar-barra::before{
-    content: '';
-    position: absolute;
-    width: 100%;
+
+.barra .progressbar-barra{
+    position: relative;
+    width: 0%;
     height: 100%;
     background-color: black;
-    transform: translateX(-100%);
-    animation: barra-progress 0.8s 0.3s ease-in-out forwards; 
+    transition: 0.1s ease;
 }
-@keyframes barra-progress{
-    to{
-        transform: translatex(-50%);
-    }
+.progressbar-barra::before{
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    content: '';
+    position: absolute;
+    left: calc(100% - 5px);
+    top: calc(50% - 5px);
+    border-radius: 50%;
 }
