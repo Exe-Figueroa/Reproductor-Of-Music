@@ -147,12 +147,24 @@ header .title-header{
     color: var(--Font-secondary);
 }
 .buttons-controller-container{
-    position: absolute;
+
     width: 100%;
-    bottom: 0%;
+
     height: 100px;
     background-color: blueviolet;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+.btn-random { 
+    width: 25px;
+    height: 25px;
+    background-image: url('../pictures/shuffle-solid\ \(2\).svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.67;
+
+}
+
