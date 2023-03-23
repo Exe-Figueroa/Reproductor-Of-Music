@@ -20,6 +20,8 @@ html{
     height: 586px;
     background-color: #e9d5bc;
     border-radius: 10px;
+    overflow: hidden;
+    position: relative;
 }
 header{
     width: 100%;
@@ -36,21 +38,30 @@ header .title-header{
     top: 100%;
     transform: translate(-50%, -50%);
 }
+.btn {
+    position: absolute;
+    width: 25px;
+    height: 218px;
 
+    top: 105px;
+}
+.btn-rigth{
+    right: 0%;
+}
 .songs-container{
-    width: 100%;
+    width: 320%;
     height: 314px;
-
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -71%;
 }
 .song-icon-container{
-    width: fit-content;
+    width: 70%;
     height: 258px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .song-icon-container .song-icon{
     width: 218px;
@@ -124,7 +135,6 @@ header .title-header{
     margin: 5px  auto ;
     display: flex;
     justify-content: space-between;
-
 }
 .time-container .time-song{
     font-family: 'Roboto', sans-serif;
@@ -135,4 +145,14 @@ header .title-header{
     font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
     color: var(--Font-secondary);
+}
+.buttons-controller-container{
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    height: 100px;
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
