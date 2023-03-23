@@ -158,13 +158,17 @@ header .title-header{
 }
 
 .btn-random { 
+    
+    background-image: url('../pictures/shuffle-solid\ \(2\).svg');
+    
+
+}
+
+.btn-coso{
     width: 25px;
     height: 25px;
-    background-image: url('../pictures/shuffle-solid\ \(2\).svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     opacity: 0.67;
-
 }
-
