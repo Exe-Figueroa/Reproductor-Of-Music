@@ -180,8 +180,8 @@ header .title-header{
     background-size: contain;
     background-position: center;
     opacity: 0.67;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 .btn-back { 
     background-image: url('../pictures/backward-solid.svg');
@@ -189,8 +189,8 @@ header .title-header{
     background-size: contain;
     background-position: center;
     opacity: 0.67;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 .btn-play { 
     background-image: url('../pictures/play-solid.svg');
@@ -198,8 +198,8 @@ header .title-header{
     background-size: contain;
     background-position: center;
     opacity: 0.67;
-    width: 27px;
-    height: 27px;
+    width: 22px;
+    height: 22px;
 }
 .btn-next { 
     background-image: url('../pictures/forward-solid.svg');
@@ -207,8 +207,8 @@ header .title-header{
     background-size: contain;
     background-position: center;
     opacity: 0.67;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 .btn-repeat { 
     background-image: url('../pictures/repeat-solid.svg');
@@ -216,7 +216,7 @@ header .title-header{
     background-size: contain;
     background-position: center;
     opacity: 0.67;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 
