@@ -39,9 +39,9 @@ function colocarTexto(){
     songDescription.innerHTML = songDescription1
 }
 
-const next=()=>{
+function next(){
     let primerCanción = document.querySelectorAll('.song-icon-container')[0];
-    slider.style.marginLeft = '-142%';
+    slider.style.marginLeft = '-151%';
     slider.style.transition = 'all 0.3s ease';
     setTimeout(()=>{
         slider.style.transition = 'none';
@@ -55,21 +55,26 @@ const next=()=>{
     }
     colocarTexto();
 }
-const back=()=>{
-    let primerCanción = document.querySelectorAll('.song-icon-container')[arraySongs.length -1]
-    slider.style.marginLeft = '-72%';
+function back(){
+    let arraySongs = document.querySelectorAll('.song-icon-container');
+    let ultimaCancion = arraySongs[arraySongs.length - 1];
+    slider.style.marginLeft = '0';
     slider.style.transition = 'all 0.3s ease';
     setTimeout(()=>{
         slider.style.transition = 'none';
-        slider.insertAdjacentElement('afterbegin', primerCanción);
-        slider.style.marginLeft = '-150.5%'
+        slider.insertAdjacentElement('afterbegin', ultimaCancion);
+        slider.style.marginLeft = '-71%'
     },100)
-    topicCounter--
+    if (topicCounter >0 && topicCounter<4){
+        topicCounter--
+    }else {
+        topicCounter=3
+    }
     colocarTexto();
 }
 
-btnrigth.addEventListener('click', next);
 btnLeft.addEventListener('click', back);
+btnrigth.addEventListener('click', next);
 /**Acá hago lo del crecimiento de la barrita */
 
 const barrita = document.querySelector('.progressbar-barra');
