@@ -220,3 +220,10 @@ header .title-header{
     height: 15px;
 }
 
+
+
+.repro{
+    position: absolute;
+    left: calc(50% - 100px);
+    top: calc(50% - 50px);
+}

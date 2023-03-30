@@ -10,23 +10,28 @@ let topicCounter = 0;
 const arraySongsName = [
     {
         name: 'High Hopes',
-        artists: 'Panic at the Disco'
+        artists: 'Panic at the Disco',
+        src: '../songs/highHopes.mp3'
     },
     {
         name: 'Payphone',
-        artists: 'Maroon 5 & Wiz Khalifa'
+        artists: 'Maroon 5 & Wiz Khalifa',
+        src: '../songs/payphone.mp3'
     },
     {
         name: 'Lose Yourself',
-        artists: 'Eminem'
+        artists: 'Eminem',
+        src: '../songs/eminem.mp3'
     },
     {
         name: 'Past Life',
-        artists: 'Trevor Daniel & Selena Gomez'
+        artists: 'Trevor Daniel & Selena Gomez',
+        src: '../songs/pastLife.mp3'
     }
 ]
 /**Acá creo la función para poder cambiar al siguiente tema y también para volver al anterior */
 let songDescription = document.querySelector('.description-song-container')
+let mySong = document.querySelector('audio.audio')
 function colocarTexto(){
     const songDescription1 = `
         <span class="name-song">
@@ -36,9 +41,15 @@ function colocarTexto(){
             ${arraySongsName[topicCounter].artists}
         </span>
     `
+    mySong.src = `${arraySongsName[topicCounter].src}`
+    mySong.load()
+    mySong.play()
     songDescription.innerHTML = songDescription1
-}
 
+    mySong.addEventListener('canplay',()=>{
+        mySong.play
+    })
+}
 function next(){
     let primerCanción = document.querySelectorAll('.song-icon-container')[0];
     slider.style.marginLeft = '-151%';
