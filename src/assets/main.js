@@ -86,17 +86,31 @@ function back(){
 
 btnLeft.addEventListener('click', back);
 btnrigth.addEventListener('click', next);
-/**Acá hago lo del crecimiento de la barrita */
+//Acá agrego las funciones a los botones del reproductor
+const btnNext = document.querySelector('.btn-next');
+const btnBack = document.querySelector('.btn-back');
+const btnPlay = document.querySelector('.btn-play');
+btnPlay.addEventListener('click', ()=>{
+    if(mySong.paused){
+        mySong.play();
+    }else{
+        mySong.pause();
+    }
+})
+btnBack.addEventListener('click', back);
+btnNext.addEventListener('click', next);
 
+/**Acá hago lo del crecimiento de la barrita */
 const barrita = document.querySelector('.progressbar-barra');
 let progreso = 0;
 const interval = setInterval(() => {
-if (progreso >= 100) {
-clearInterval(interval);
-} else {
-progreso++;
-barrita.style.width = `${progreso}%`;
-}
-}, 1000);
+    if (progreso >= 100) {
+        progreso = 0
+        barrita.style.width = `${progreso}%`
+    } else {
+        progreso++;
+        barrita.style.width = `${progreso}%`;
+    }
+    }, 1000);
 
 
