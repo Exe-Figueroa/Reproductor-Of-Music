@@ -5,7 +5,7 @@ const btnLeft = document.querySelector('.btn-left');
 const btnrigth = document.querySelector('.btn-rigth');
 slider.insertAdjacentElement('afterbegin', ultimaCancion);
 let topicCounter = 0;
-
+const currentTimeSong = document.querySelector('.time-song')
 const time = document.querySelector('.time-song');
 const timeContainer = document.querySelector('.time-container');
 /**Acá creo el array que va a contener el  */
@@ -106,14 +106,25 @@ btnNext.addEventListener('click', next);
 function obtenerPorcentajeAudio() {
     const audio = document.querySelector('audio'); 
     const duracion = audio.duration; 
-    const tiempoActual = audio.currentTime; 
+    const tiempoActual = (audio.currentTime).toFixed()
     const porcentaje = (tiempoActual / duracion) * 100; 
     const porcentajeActual = porcentaje.toFixed(2); 
-
     const barrita = document.querySelector('.progressbar-barra');
     barrita.style.width = `${porcentajeActual}%`;
     // Hacer algo con los valores obtenidos
     console.log(`El porcentaje actual es ${porcentajeActual}%`);
+    // tiempoTranscurrido(tiempoActual);
+    currentTimeSong.innerHTML= tiempoTranscurrido(tiempoActual)
+
+    
+}
+function tiempoTranscurrido(tiempoSegundos){
+    let minutos = Math.floor(tiempoSegundos/60);
+    let segundosRestantes = tiempoSegundos % 60;
+    if (segundosRestantes <10){
+        segundosRestantes = "0" + segundosRestantes;
+    }
+    return `${minutos}:${segundosRestantes}`
 }
 const barrita = document.querySelector('.progressbar-barra');
 let progreso = 0;
