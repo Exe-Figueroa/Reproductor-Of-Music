@@ -115,8 +115,6 @@ function obtenerPorcentajeAudio() {
     console.log(`El porcentaje actual es ${porcentajeActual}%`);
     // tiempoTranscurrido(tiempoActual);
     currentTimeSong.innerHTML= tiempoTranscurrido(tiempoActual)
-
-    
 }
 function tiempoTranscurrido(tiempoSegundos){
     let minutos = Math.floor(tiempoSegundos/60);
