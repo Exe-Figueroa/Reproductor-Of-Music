@@ -6,6 +6,8 @@ const btnrigth = document.querySelector('.btn-rigth');
 slider.insertAdjacentElement('afterbegin', ultimaCancion);
 let topicCounter = 0;
 
+const time = document.querySelector('.time-song');
+const timeContainer = document.querySelector('.time-container');
 /**Acá creo el array que va a contener el  */
 const arraySongsName = [
     {
@@ -99,44 +101,19 @@ btnPlay.addEventListener('click', ()=>{
 })
 btnBack.addEventListener('click', back);
 btnNext.addEventListener('click', next);
-
-/**Acá hago lo del crecimiento de la barrita */
-/**Obtengo el valor del tiempo del sonido */
-// let duration = mySong.duration
-// console.log(duration);
-// const barrita = document.querySelector('.progressbar-barra');
-// let progreso = 0;
-// const interval = setInterval(() => {
-//     if (progreso >= 100) {
-//         progreso = 0
-//         barrita.style.width = `${progreso}%`
-//     } else {
-//         progreso++;
-//         barrita.style.width = `${progreso}%`;
-//     }
-//     }, 1000);
-
+//Acá se realizan las funciones para la barrita y su porcentaje
 
 function obtenerPorcentajeAudio() {
-    const audio = document.querySelector('audio'); // Obtener la etiqueta audio
-    const duracion = audio.duration; // Obtener la duración total del audio
-    const tiempoActual = audio.currentTime; // Obtener el tiempo actual del audio
-    const porcentaje = (tiempoActual / duracion) * 100; // Calcular el porcentaje
-    const sonido = audio.volume; // Obtener el valor del sonido
+    const audio = document.querySelector('audio'); 
+    const duracion = audio.duration; 
+    const tiempoActual = audio.currentTime; 
+    const porcentaje = (tiempoActual / duracion) * 100; 
+    const porcentajeActual = porcentaje.toFixed(2); 
 
-    // Guardar los valores en variables
-    const porcentajeActual = porcentaje.toFixed(2); // Redondear a 2 decimales
-    const valorSonido = sonido;
-
-    // Actualizar el ancho de la barra de progreso
     const barrita = document.querySelector('.progressbar-barra');
     barrita.style.width = `${porcentajeActual}%`;
-
     // Hacer algo con los valores obtenidos
     console.log(`El porcentaje actual es ${porcentajeActual}%`);
-    console.log(`El valor del sonido es ${valorSonido}`);
-
-    
 }
 const barrita = document.querySelector('.progressbar-barra');
 let progreso = 0;
@@ -147,6 +124,6 @@ if (progreso >= 100) {
 } else {
     progreso++;
     barrita.style.width = `${progreso}%`;
-    obtenerPorcentajeAudio(); // Obtener el porcentaje actual de reproducción del audio
+    obtenerPorcentajeAudio(); 
 }
 }, 1000);
