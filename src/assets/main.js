@@ -85,7 +85,6 @@ function back(){
     }
     colocarTexto();
 }
-
 btnLeft.addEventListener('click', back);
 btnrigth.addEventListener('click', next);
 //Acá agrego las funciones a los botones del reproductor
